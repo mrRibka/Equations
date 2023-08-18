@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Input String</title>
+</head>
+<body>
+<form th:action="@{/process}" th:method="post">
+    <input type="text" name="equation">
+    <button type="submit">Отправить</button>
+</form>
+<a th:href="@{/equations}">Equations</a>
+</body>
+</html>

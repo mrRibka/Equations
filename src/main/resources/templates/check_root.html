@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Root</title>
+</head>
+<body>
+<h1>Check Equation Root</h1>
+
+<h2>Equation</h2>
+<p th:text="${equation.equationString}"></p>
+
+<h2>Check Root</h2>
+<form th:action="@{/check_root/{id}(id=${equation.id})}" th:method="post">
+    <label for="number">Number:</label>
+    <input type="number" id="number" name="number" required>
+    <button type="submit">Check Root</button>
+</form>
+
+<a th:href="@{/equations}">Equations</a>
+</body>
+</html>

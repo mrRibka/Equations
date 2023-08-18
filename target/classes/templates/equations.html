@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Equations List</title>
+</head>
+<body>
+
+<form th:action="@{/equations}" method="post">
+    <label for="number">Search by Root:</label>
+    <input type="number" id="number" name="number">
+    <button type="submit">Search</button>
+</form>
+
+<h1>Equations List</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Equation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="equation : ${equations}">
+        <td th:text="${equation.id}"></td>
+        <td> <a th:href="@{/check_root/{id}(id=${equation.id})}"  th:text="${equation.equationString}" /></td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/input}">Go to Input Page</a>
+</body>
+</html>
